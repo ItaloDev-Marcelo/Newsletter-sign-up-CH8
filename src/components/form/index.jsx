@@ -1,11 +1,9 @@
 import { useState } from "react"
-import Success from "./Success";
 
 
-export default function Form() {
+export default function Form({setShowBlockSucess,hundleUpdate}) {
     const [email, setEmail] = useState('')
     const [error, setError] = useState(true)
-    const [showTime, setShowTime] = useState(false)
 
     function hundleChange(e) {
       setEmail(e.target.value)
@@ -17,21 +15,17 @@ export default function Form() {
       const pattern = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?)*$/;
       setError(pattern.test(email) ? true : false)
       
-      setShowTime(pattern.test(email) ? true : false)
-    }
+      setShowBlockSucess(!pattern.test(email) ? true : false)
 
-    function reset() {
-      setShowTime(!showTime)
-      setError(false)
+      pattern.test(email) ? hundleUpdate() : null
     }
 
 
-    console.log("showtime in the form", showTime)
     
 
     return (
       <div>
-      <form  className={!showTime ? 'form block' : 'from'} >
+      <form  >
          <div>
             <label htmlFor="email">Email Address</label>
             <p id='error-txt' className={error ? 'sms' : 'sms error'}>Valid email required</p>
@@ -41,7 +35,6 @@ export default function Form() {
          <br /><br />
         <button type="submit" onClick={hundleSubmit}>Subscribe to monthly newsletter</button>
       </form>
-      <Success reset={reset} showTime={showTime}/>
       </div>
     )
 }
