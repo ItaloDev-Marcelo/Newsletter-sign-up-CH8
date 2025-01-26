@@ -37,6 +37,10 @@ strong {
 }
 
 
+picture img {
+max-width:100%;
+}
+
 p {
   color: var(--Grey);
 }
