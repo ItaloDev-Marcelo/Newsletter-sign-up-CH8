@@ -36,13 +36,7 @@ strong {
   color: #000;
 }
 
-picture{
- width: 100vw;
-}
 
-picture img {
-max-width:100%;
-}
 
 p {
   color: var(--Grey);
