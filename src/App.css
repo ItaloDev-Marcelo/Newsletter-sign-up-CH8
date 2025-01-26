@@ -36,6 +36,9 @@ strong {
   color: #000;
 }
 
+picture{
+ width: 100%;
+}
 
 picture img {
 max-width:100%;
