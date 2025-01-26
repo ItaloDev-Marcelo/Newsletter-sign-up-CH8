@@ -1,12 +1,126 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 100%;
 }
 
+
+:root{
+--Tomato: hsl(4, 100%, 67%);
+--Dark-Slate-Grey: hsl(234, 29%, 20%);
+--Charcoal-Grey: hsl(235, 18%, 26%);
+--Grey: hsl(231, 7%, 60%);
+--White: hsl(0, 0%, 100%);
+}
+
+input {
+  outline: 1px solid #9294a0;
+}
+
+
+button {
+  cursor: pointer;
+}
+
+button:hover , button:active {
+  background: linear-gradient(120deg,#e44a3c, #ff6f61);
+  box-shadow: 0 8px 15px rgba(255, 111, 97, 0.4); /* Sombra mais intensa */
+  transform: translateY(2px); 
+}
+
+h1,h2,h3, #success-txt {
+  color: var(--Dark-Slate-Grey);
+}
+
+strong {
+  color: #000;
+}
+
+
+p {
+  color: var(--Grey);
+}
+
+button, input {
+  border: none;
+}
+
+button {
+  background-color: var(--Dark-Slate-Grey);
+  color: #fff;
+  font-weight: 700;
+}
+
+input:focus {
+  outline-color: gray;
+}
+
+body {
+  font-size: 1em;
+  font-family: "Roboto", serif;
+}
+
+.card{
+  display: flex;
+  flex-direction: column-reverse;
+  width: 375px;
+}
+
+.successCard {
+  display: none; 
+}
+
+.card {
+  display: none; 
+}
+
+.card.active {
+  display: flex;
+}
+
+.successCard.active {
+  display: block;
+}
+
+
+
+
+#header-content {
+  padding: 2em 3em;
+}
+
+#header-content #header-title {
+  font-size: 2.3em;
+  padding: .7em 0;
+}
+
+#news-row-container {
+  margin: 1.4em 0;
+}
+
+.row-item {
+  display: flex;
+  margin: 0.5em 0;
+}
+
+.row-item div img {
+  margin-right: 1em;
+}
+
+#row {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: .7em;
+}
+
+
 .email.error{
-  border-color: red;
+  outline-color: red;
+  color: red;
+}
+
+.email.error::placeholder {
   color: red;
 }
 
@@ -16,6 +130,8 @@
 
 .sms.error {
   display: block;
+  font-size: .7em;
+  color: red;
 }
 
 .from {
@@ -25,38 +141,55 @@
   display: block;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+
+input {
+  width: 100%;
+  height: 55px;
+  border-radius: 7px;
+  padding-left: 1em;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button {
+  
+  border-radius: 7px;
+  width: 100%;
+  height: 55px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+
+label {
+  font-size: .9em;
+  font-weight: 700;
 }
 
-.card {
-  padding: 2em;
+
+#success-sign-up {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding:0  2em;
+  height: 100vh;
 }
 
-.read-the-docs {
-  color: #888;
+#success-container img {
+  width: 50px;
+  margin: 0 0 1em 0;
+}
+
+#success-title {
+  font-size:3em;
+  padding: 1em 0;
+  width: 300px;
+}
+
+#success-txt {
+  line-height: 22px;
+}
+
+#submit {
+  padding: 0 2em;
+  position: relative;
+  top: 20%;
 }

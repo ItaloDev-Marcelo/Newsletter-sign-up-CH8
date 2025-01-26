@@ -26,7 +26,7 @@ export default function Form({setShowBlockSucess,hundleUpdate}) {
     return (
       <div>
       <form  >
-         <div>
+         <div id="row">
             <label htmlFor="email">Email Address</label>
             <p id='error-txt' className={error ? 'sms' : 'sms error'}>Valid email required</p>
          </div>

@@ -24,21 +24,27 @@ function App() {
 
   return (
         <main>
-          <section id="container-box" className={showBlockSucess ? 'card active' : 'card'}>
-          <header id='header-container'>
+          <section  className={showBlockSucess ? 'card active' : 'card'}>
+          <header id='header-content'>
              <h1 id="header-title">Stay updated!</h1>
              <p id="header-text-info">Join 60,000+ product managers receiving monthly updates on:</p>
              <div id="news-row-container">
-               <div id="row-item">
+               <div className="row-item">
+                <div>
                  <img src={IconList} alt=''/>
+                </div>
                  <p className='row-txt'> Product discovery and building what matters</p>
                </div>
-               <div id="row-item">
-               <img src={IconList} alt=''/>
+               <div  className="row-item">
+               <div>
+                 <img src={IconList} alt=''/>
+                </div>
                <p className='row-txt'>Measuring to ensure updates are a success</p>
                </div>
-               <div id="row-item">
-               <img src={IconList} alt=''/>
+               <div  className="row-item">
+               <div>
+                 <img src={IconList} alt=''/>
+                </div>
                <p className='row-txt'> And much more!</p>
                </div>
              </div>
@@ -48,7 +54,7 @@ function App() {
                       {WindowSize  <= 700 ? <img src={Mobile} alt='err-2' id='Mobile-image' /> : <img src={Desk} alt='err-1' id='Desk-image' />}
          </picture>
           </section>
-          <div id="success-box" className={showBlock ? 'successCard active' : 'successCard'}>
+          <div className={showBlock ? 'successCard active' : 'successCard'}>
             <Success Reset={Reset}/>
           </div>
          </main>
