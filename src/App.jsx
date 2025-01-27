@@ -51,7 +51,7 @@ function App() {
              <Form  setShowBlockSucess={setShowBlockSucess} hundleUpdate={hundleUpdate}/>
          </header>
          <picture id='image-container'>
-                      {WindowSize  <= 700 ? <img src={Mobile} alt='err-2' id='Mobile-image' /> : <img src={Desk} alt='err-1' id='Desk-image' />}
+                      {WindowSize  <= 1000 ? <img src={Mobile} alt='err-2' id='Mobile-image' /> : <img src={Desk} alt='err-1' id='Desk-image' />}
          </picture>
           </section>
           <div className={showBlock ? 'successCard active' : 'successCard'}>

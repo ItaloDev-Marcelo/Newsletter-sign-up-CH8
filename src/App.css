@@ -72,7 +72,7 @@ body {
 .card{
   display: flex;
   flex-direction: column-reverse;
-  width: 375px;
+  background-color: red;
 }
 
 .successCard {
@@ -90,9 +90,6 @@ body {
 .successCard.active {
   display: block;
 }
-
-
-
 
 #header-content {
   padding: 2em;
@@ -211,6 +208,66 @@ label {
   picture > img {
     max-width: 100%;
   }
-
   
+}
+
+
+@media (min-width: 700px) {
+
+  body {
+     background-color: var(--Dark-Slate-Grey);
+  }
+
+  picture img {
+    overflow: hidden;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  .card.active{
+    display: flex;
+    flex-direction: column-reverse;
+    margin: 25px auto;
+    background-color: #fff;
+    width: 400px;
+    border-radius: 10px;
+  }
+
+
+  #success-title {
+    font-size:3em;
+    padding:.5em 0 1em 0;
+    width: 300px;
+  }
+  
+  #success-sign-up {
+    margin: 20% auto 0 auto;
+    position: relative;
+
+    width: 440px;
+    height: 450px;
+    background-color: #fff;
+    border-radius: 10px;
+  }
+  
+
+  #submit {
+    padding: 0 2em;
+    position: relative;
+    top: 5%;
+  }
+  
+}
+
+
+@media (min-width: 1024px) {
+  .card.active{
+    display: flex;
+    flex-direction: row;
+    margin: 25px auto;
+    background-color: #fff;
+    width: 800px;
+    border-radius: 10px;
+    padding: 5em;
+  }
 }
