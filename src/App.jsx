@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 import Form from './components/form'
 import IconList from './assets/images/icon-list.svg';
@@ -11,6 +11,7 @@ function App() {
 
   const [showBlock, setShowBlock] = useState(false)
   const [showBlockSucess, setShowBlockSucess] = useState(true)
+  const [loading, setLoading] = useState(true);
   const WindowSize = UseLayout()
 
   function hundleUpdate() {
@@ -22,8 +23,20 @@ function App() {
     setShowBlock(!showBlock)
 }
 
+  useEffect(()=> {
+    setTimeout(() => {
+       setLoading(!loading)
+    }, 4000)
+  }, [])
+
   return (
+    <>
         <main>
+        <div className={loading ? 'loading active' : 'loading'}>
+      <svg >
+          <circle cx='70' cy='70' r='70'></circle>
+       </svg>
+      </div>
           <section  className={showBlockSucess ? 'card active' : 'card'}>
           <header id='header-content'>
              <h1 id="header-title">Stay updated!</h1>
@@ -58,6 +71,7 @@ function App() {
             <Success Reset={Reset}/>
           </div>
          </main>
+         </>
   )
 }
 

@@ -14,6 +14,82 @@
 --White: hsl(0, 0%, 100%);
 }
 
+/*
+.main.loading {
+  display: none;
+}
+
+.main {
+  display: flex;
+}
+
+.loading.active {
+  display: block;
+}
+
+.loading {
+  display: none;
+}
+
+*/
+.loading.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  background-color: var(--Dark-Slate-Grey);
+  min-height: 100vh;
+  width: 100vw;
+}
+
+.loading {
+  display: none;
+}
+
+svg {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+  0%{
+    transform: rotate(0deg);
+  }
+
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+svg circle {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke-linecap: round;
+  stroke-width: 10;
+  stroke: #e44a3c;
+  stroke-dasharray: 440;
+  stroke-dashoffset: 440;
+  transform: translate(5px,5px);
+  animation:  animate 4s linear infinite;
+}
+
+
+@keyframes  animate  {
+   0%, 100% {
+  stroke-dashoffset: 440;
+   }
+   50% {
+    stroke-dashoffset: 0;
+     }
+     50.1% {
+      stroke-dashoffset: 880;
+       }
+}
+
 input {
   outline: 1px solid #9294a0;
 }
@@ -72,7 +148,6 @@ body {
 .card{
   display: flex;
   flex-direction: column-reverse;
-  background-color: red;
 }
 
 .successCard {
@@ -167,8 +242,7 @@ label {
   font-weight: 700;
 }
 
-
-#success-sign-up {
+ #success-sign-up {
   position: relative;
   width: 100%;
   display: flex;
@@ -227,7 +301,7 @@ label {
   .card.active{
     display: flex;
     flex-direction: column-reverse;
-    margin: 25px auto;
+    margin: 55px auto;
     background-color: #fff;
     width: 400px;
     border-radius: 10px;
@@ -264,10 +338,60 @@ label {
   .card.active{
     display: flex;
     flex-direction: row;
-    margin: 25px auto;
+    justify-content: space-between;
+    align-items: center;
+    margin: 18% auto 0 auto;
     background-color: #fff;
     width: 800px;
     border-radius: 10px;
-    padding: 5em;
+    border-radius: 10px;
+    padding: 1.5em 1em;
+  }
+
+  #header-content #header-title {
+    font-size: 3.2em;
+    padding: .5em 0;
+  }
+
+  picture {
+    max-width: 75%;
+    margin-left: 2em;
+  }
+
+  picture > img {
+    max-width: 100%;
+  }
+
+  form {
+    width: 350px;
+  }
+
+
+  #success-sign-up {
+    margin: 9% auto 0 auto;
+    position: relative;
+
+    width: 440px;
+    height: 450px;
+    background-color: #fff;
+    border-radius: 10px;
+  }
+}
+
+@media (min-width: 1352px) {
+  .card.active{
+    margin: 4.5% auto 0 auto;
+  }
+}
+
+
+
+@media (min-width: 1440px) {
+  .card.active{
+    margin: 12% auto 0 auto;
+  }
+
+  #success-sign-up {
+    margin: 15% auto 0 auto;
   }
 }
