@@ -28,6 +28,14 @@ button:hover , button:active {
   transform: translateY(2px); 
 }
 
+picture {
+  width: 100vw;
+}
+
+picture > img {
+  width: 100%;
+}
+
 h1,h2,h3, #success-txt {
   color: var(--Dark-Slate-Grey);
 }
@@ -86,11 +94,11 @@ body {
 
 
 #header-content {
-  padding: 2em 3em;
+  padding: 2em;
 }
 
 #header-content #header-title {
-  font-size: 2.3em;
+  font-size: 2.5em;
   padding: .7em 0;
 }
 
@@ -191,4 +199,17 @@ label {
   padding: 0 2em;
   position: relative;
   top: 20%;
+}
+
+@media (min-width: 450px) {
+  
+  picture {
+    max-width: 100%;
+  }
+
+  picture > img {
+    max-width: 100%;
+  }
+
+  
 }
